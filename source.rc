@@ -1,0 +1,2 @@
+export PROJECT=`pwd`
+cd src
