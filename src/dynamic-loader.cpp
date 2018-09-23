@@ -12,12 +12,12 @@ int main() {
     // open the library
     cout << "Opening plug-in ...\n";
     void* handle = dlopen("./plugin/libspeed_test_curl.so", RTLD_LAZY);
-    
+
     if (!handle) {
         cerr << "Cannot open library: " << dlerror() << '\n';
         return 1;
     }
-    
+
     // load the symbol
     cout << "Loading symbol plug-in API...\n";
     typedef void (*plugin_t)(char[]);
@@ -32,11 +32,11 @@ int main() {
         dlclose(handle);
         return 1;
     }
-    
+
     // use it to do the calculation
     cout << "Calling plugin...\n";
     plugin(url);
-    
+
     // close the library
     cout << "Closing library...\n";
     dlclose(handle);
