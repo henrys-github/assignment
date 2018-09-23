@@ -46,7 +46,6 @@ int curl_download(char* url)
     return 1;
   }
 
-  printf("hanhan\n");
   curl_global_init(CURL_GLOBAL_ALL);
 
   /* init the curl session */
@@ -56,10 +55,10 @@ int curl_download(char* url)
   curl_easy_setopt(curl_handle, CURLOPT_URL, url);
 
   /* Switch on full protocol/debug output while testing */
-  curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 1L);
+  curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 0L);
 
   /* disable progress meter, set to 0L to enable and disable debug output */
-  curl_easy_setopt(curl_handle, CURLOPT_NOPROGRESS, 1L);
+  curl_easy_setopt(curl_handle, CURLOPT_NOPROGRESS, 0L);
 
   /* send all data to this function  */
   curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, write_data);
