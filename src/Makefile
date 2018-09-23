@@ -12,4 +12,4 @@ dynamic-loader: dynamic-loader.cpp
 	cp -f $@ $(PROJECT)
 
 clean:
-	rm -f dynamic-loader  
+	rm -f dynamic-loader
